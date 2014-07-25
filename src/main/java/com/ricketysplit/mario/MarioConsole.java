@@ -1,3 +1,5 @@
+package com.ricketysplit.mario;
+
 public class MarioConsole implements Printer {
 
     @Override

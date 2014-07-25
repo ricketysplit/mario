@@ -1,3 +1,5 @@
+package com.ricketysplit.mario;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
@@ -18,14 +20,14 @@ public class PyramidBuilder {
     public Pyramid pyramid() {
         int n = 0;
         int size = 0;
-        do {
-            try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))){
-                System.out.println("How tall do you want your pyramind?");
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in));){
+            do {
+                System.out.println("How tall do you want your pyramid?");
                 size = Integer.parseInt(br.readLine());
-            } catch (Exception e) {
-                System.out.println("Not a valid number");
-            }
-        } while (!isValid(size));
+            } while (!isValid(size));
+        } catch (Exception e){
+            System.out.println("Not a valid number.");
+        }
         return new Pyramid(size);
     }
 

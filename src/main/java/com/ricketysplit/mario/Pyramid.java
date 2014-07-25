@@ -1,3 +1,5 @@
+package com.ricketysplit.mario;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
