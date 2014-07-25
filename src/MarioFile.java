@@ -6,10 +6,8 @@ public class MarioFile implements Printer {
 
     @Override
     public void print(Pyramid p) {
-        try {
-            PrintWriter pWriter = new PrintWriter("mario.txt", "UTF-8");
-            pWriter.append(p.toString());
-            pWriter.close();
+        try (PrintWriter printWriter = new PrintWriter("mario.txt", "UTF-8");){
+            printWriter.append(p.toString());
         } catch (FileNotFoundException ex) {
         } catch (UnsupportedEncodingException ex) {
         }

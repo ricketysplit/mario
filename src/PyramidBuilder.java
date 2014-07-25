@@ -16,11 +16,10 @@ public class PyramidBuilder {
     }
 
     public Pyramid pyramid() {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = 0;
         int size = 0;
         do {
-            try {
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))){
                 System.out.println("How tall do you want your pyramind?");
                 size = Integer.parseInt(br.readLine());
             } catch (Exception e) {

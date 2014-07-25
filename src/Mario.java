@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.Buffer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,11 +20,10 @@ public class Mario {
 
     private void start() {
         Printer p = null;
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String ans = "";
         while (!ans.equals("Y") && !ans.equals("N")) {
             System.out.println("Would you like to print your pyramid to a file? (Y/N)");
-            try {
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in));){
                 ans = br.readLine();
             } catch (IOException ex) {
                 Logger.getLogger(Mario.class.getName()).log(Level.SEVERE, null, ex);
